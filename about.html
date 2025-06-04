@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>JUSTICE - Free Lawyer Website Template</title>
+    <title>PorSusDerechos</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -26,28 +27,48 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-968597756"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-968597756');
+</script>
+
 <body>
     <!-- Header Start -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 bg-secondary d-none d-lg-block">
-                <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                    <h1 class="m-0 display-4 text-primary text-uppercase">Justice</h1>
+                <a href="#" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center" style="font-size: 1vw">
+                    <h1 class="m-0 display-4 text-primary" style="font-size: 3.0em; text-align: center;">PorSusDerechos</h1>
                 </a>
             </div>
             <div class="col-lg-9">
                 <div class="row bg-white border-bottom d-none d-lg-flex">
-                    <div class="col-lg-7 text-left">
-                        <div class="h-100 d-inline-flex align-items-center py-2 px-3">
-                            <i class="fa fa-envelope text-primary mr-2"></i>
-                            <small>info@example.com</small>
+                    <div class="col-lg-12 text-left">
+                        <div class="h-100 d-inline-flex align-items-center py-2 px-3 mr-3">
+                            <i class="fa fa-envelope text-primary"></i>
+                            <small>
+                                <a class="m-1" href="mailto:contacto@porsusderechos.cl">contacto@porsusderechos.cl</a>
+                            </small>
                         </div>
-                        <div class="h-100 d-inline-flex align-items-center py-2 px-2">
-                            <i class="fa fa-phone-alt text-primary mr-2"></i>
-                            <small>+012 345 6789</small>
+                        <div class="h-100 d-inline-flex align-items-center py-2 px-2 mr-3">
+                            <i class="fa fa-phone-alt text-primary"></i>
+                            <small>
+                                <a class="m-1" href="tel:+56953207702"> +569 53207702</a>
+                            </small>
+                        </div>
+                        <div class="h-100 d-inline-flex align-items-center py-2 px-2 mr-3">
+                            <i class="fab fa-whatsapp text-primary m-1" aria-hidden="true"></i>
+                            <small>
+                                <a href="https://wa.me/+56953207702"> +569 53207702</a>
+                            </small>
                         </div>
                     </div>
-                    <div class="col-lg-5 text-right">
+                    <!-- <div class="col-lg-5 text-right">
                         <div class="d-inline-flex align-items-center p-2">
                             <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
                                 <i class="fab fa-facebook-f"></i>
@@ -65,32 +86,40 @@
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
                     <a href="index.html" class="navbar-brand d-block d-lg-none">
-                        <h1 class="m-0 display-4 text-primary text-uppercase">Justice</h1>
+                        <h1 class="m-0 display-4 text-primary">PorSusDerechos</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link">Home</a>
-                            <a href="about.html" class="nav-item nav-link active">About</a>
-                            <a href="service.html" class="nav-item nav-link">Practice</a>
-                            <a href="team.html" class="nav-item nav-link">Attorneys</a>
+                            <a href="index.html" class="nav-item nav-link active">Inicio</a>
+                            <a href="about.html" class="nav-item nav-link">Acerca de nosotros</a>
                             <div class="nav-item dropdown">
+                                <a href="service.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Servicios</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="#" class="dropdown-item">Derecho Civil</a>
+                                    <a href="#" class="dropdown-item">Derecho Familia</a>
+                                    <a href="#" class="dropdown-item">Derecho Laboral</a>
+                                    <a href="#" class="dropdown-item">Derecho Penal</a>
+                                </div>
+                            </div>
+                            <a href="team.html" class="nav-item nav-link">Abogados</a>
+<!--                        <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
                                 <div class="dropdown-menu rounded-0 m-0">
                                     <a href="#" class="dropdown-item">Menu Item 1</a>
                                     <a href="#" class="dropdown-item">Menu Item 2</a>
                                     <a href="#" class="dropdown-item">Menu Item 3</a>
                                 </div>
-                            </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            </div> -->
+                            <a href="contact.html" class="nav-item nav-link">Contacto</a>
                         </div>
-                        <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Get A Quote</a>
+                        <a href="#" class="btn btn-primary mr-3 d-none d-lg-block">Login</a>
                     </div>
                 </nav>
             </div>
@@ -103,11 +132,11 @@
     <div class="container-fluid bg-page-header" style="margin-bottom: 90px;">
         <div class="container">
             <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-                <h3 class="display-3 text-white text-uppercase">About</h3>
+                <h3 class="display-3 text-white">NOSOTROS</h3>
                 <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                    <p class="m-0"><a class="text-white" href="">INICIO</a></p>
                     <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">About</p>
+                    <p class="m-0">NOSOTROS</p>
                 </div>
             </div>
         </div>
@@ -123,59 +152,60 @@
                     <img class="img-fluid rounded" src="img/about.jpg" alt="">
                 </div>
                 <div class="col-lg-7 mt-4 mt-lg-0">
-                    <h2 class="position-relative text-center bg-white text-primary rounded p-3 mt-4 mb-4 d-none d-lg-block" style="width: 350px; margin-left: -205px;">25 Years Experience</h2>
-                    <h6 class="text-uppercase">Learn About Us</h6>
-                    <h1 class="mb-4">We Provide Reliable And Effective Legal Services</h1>
-                    <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor</p>
-                    <a href="" class="btn btn-primary mt-2">Learn More</a>
+                    <h2 class="position-relative text-center bg-white text-primary rounded p-3 mt-4 mb-4 d-none d-lg-block" style="width: 350px; margin-left: -205px; font-size: 150%;">10 años de experiencia</h2>
+                    <h6>ACERCA DE NOSOTROS</h6>
+                    <h1 class="mb-4">Prestamos servicios jurídicos fiables y eficaces</h1>
+                    <p style="text-align: justify;">Nuestro equipo de abogados altamente calificados se especializa en una amplia gama de áreas legales, incluyendo derecho civil, derecho penal, derecho laboral y derecho de familia. Esto nos permite ofrecer soluciones integrales a las necesidades legales de nuestros clientes.</p>
+                    <!-- <a href="" class="btn btn-primary mt-2">Saber más</a> -->
                 </div>
             </div>
         </div>
     </div>
     <!-- About End -->
 
-
-    <!-- Appointment Start -->
+<!-- 
+    Appointment Start
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="bg-appointment rounded">
                 <div class="row h-100 align-items-center justify-content-center">
                     <div class="col-lg-6 py-5">
                         <div class="rounded p-5 my-5" style="background: rgba(55, 55, 63, .7);">
-                            <h1 class="text-center text-white mb-4">Get An Appointment</h1>
+                            <h1 class="text-center text-white mb-4">Concertar una cita</h1>
                             <form>
                                 <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
+                                    <input type="text" class="form-control border-0 p-4" placeholder="Nombre completo" required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
+                                    <input type="email" class="form-control border-0 p-4" placeholder="Email" required="required" />
                                 </div>
                                 <div class="form-row">
                                     <div class="col-6">
                                         <div class="form-group">
                                             <div class="date" id="date" data-target-input="nearest">
-                                                <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Select Date" data-target="#date" data-toggle="datetimepicker"/>
+                                                <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Seleccione fecha" data-target="#date" data-toggle="datetimepicker"/>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <div class="time" id="time" data-target-input="nearest">
-                                                <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Select Time" data-target="#time" data-toggle="datetimepicker"/>
+                                                <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Seleccione hora" data-target="#time" data-toggle="datetimepicker"/>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <select class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 1</option>
-                                        <option value="3">Service 1</option>
+                                        <option selected>Seleccione un servicio</option>
+                                        <option value="1">Civil</option>
+                                        <option value="2">Familia</option>
+                                        <option value="3">Laboral</option>
+                                        <option value="4">Penal</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Get An Appointment</button>
+                                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Agendar</button>
                                 </div>
                             </form>
                         </div>
@@ -184,7 +214,8 @@
             </div>
         </div>
     </div>
-    <!-- Appointment End -->
+    Appointment End
+ -->
 
 
     <!-- Features Start -->
@@ -198,15 +229,15 @@
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
                     <div class="feature-text bg-white rounded p-lg-5">
-                        <h6 class="text-uppercase">Our Features</h6>
-                        <h1 class="mb-4">Why Choose Us</h1>
+                        <h6>NUESTRAS CARACTERÍSTICAS</h6>
+                        <h1 class="mb-4">¿Por qué escogernos?</h1>
                         <div class="d-flex mb-4">
                             <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
                                 <h5 class="text-secondary m-0">01</h5>
                             </div>
                             <div class="ml-4">
-                                <h5>Best Law Practices</h5>
-                                <p class="m-0">Ipsum duo tempor elitr rebum stet magna amet kasd. Ipsum magna ipsum ipsum stet ipsum</p>
+                                <h5>Mejores prácticas legales</h5>
+                                <p class="m-0" style="text-align: justify;">Contamos con un equipo de abogados con amplia experiencia y conocimientos jurídicos actualizados. Nuestros profesionales están comprometidos en estar al tanto de las últimas leyes y regulaciones para brindar a nuestros clientes asesoramiento legal sólido y estratégico.</p>
                             </div>
                         </div>
                         <div class="d-flex mb-4">
@@ -214,8 +245,8 @@
                                 <h5 class="text-secondary m-0">02</h5>
                             </div>
                             <div class="ml-4">
-                                <h5>Efficiency & Trust</h5>
-                                <p class="m-0">Ipsum duo tempor elitr rebum stet magna amet kasd. Ipsum magna ipsum ipsum stet ipsum</p>
+                                <h5>Eficiencia y Confianza</h5>
+                                <p class="m-0" style="text-align: justify;">Nos guiamos por valores fundamentales de ética, profesionalismo, honestidad y dedicación. Nos esforzamos por construir relaciones de confianza a largo plazo con nuestros clientes, basadas en la transparencia y la comunicación efectiva.</p>
                             </div>
                         </div>
                         <div class="d-flex">
@@ -223,8 +254,8 @@
                                 <h5 class="text-secondary m-0">03</h5>
                             </div>
                             <div class="ml-4">
-                                <h5>Results You Deserve</h5>
-                                <p class="m-0">Ipsum duo tempor elitr rebum stet magna amet kasd. Ipsum magna ipsum ipsum stet ipsum</p>
+                                <h5>Resultados que tu mereces</h5>
+                                <p class="m-0" style="text-align: justify;">Nuestra misión es brindar asesoramiento legal de alta calidad y representación excepcional a nuestros clientes. Nos comprometemos a defender sus derechos y resolver sus problemas legales de manera eficiente y efectiva.</p>
                             </div>
                         </div>
                     </div>
@@ -237,70 +268,84 @@
 
     <!-- Footer Start -->
     <div class="container-fluid bg-secondary text-white pt-5 px-sm-3 px-md-5" style="margin-top: 90px;">
-        <div class="row mt-5">
-            <div class="col-lg-4">
+        <div class="row pt-2">
+            <div class="col-lg-6">
                 <div class="d-flex justify-content-lg-center p-4" style="background: rgba(256, 256, 256, .05);">
                     <i class="fa fa-2x fa-map-marker-alt text-primary"></i>
                     <div class="ml-3">
-                        <h5 class="text-white">Our Office</h5>
-                        <p class="m-0">123 Street, New York, USA</p>
+                        <h5 class="text-white">Nuestra oficina</h5>
+                        <a href="https://goo.gl/maps/CAoj3DVdrfHroxdV6">Morandé 322, Oficina 404, Santiago</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="d-flex justify-content-lg-center p-4" style="background: rgba(256, 256, 256, .05);">
                     <i class="fa fa-2x fa-envelope-open text-primary"></i>
                     <div class="ml-3">
-                        <h5 class="text-white">Email Us</h5>
-                        <p class="m-0">info@example.com</p>
+                        <h5 class="text-white ajuste-footer">Escribenos al correo</h5>
+                        <a class="m-0" href="mailto:contacto@porsusderechos.cl">contacto@porsusderechos.cl</a>
+                        <!-- <p class="m-0" href="mailto:cdelapeyra@porsusderechos.cl">cdelapeyra@porsusderechos.cl</p> -->
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+        </div>
+        <div class="row pt-2">
+            <div class="col-lg-6">
+                <div class="d-flex justify-content-lg-center p-4" style="background: rgba(256, 256, 256, .05);">
+                    <i class="fab fa-2x fa-whatsapp text-primary" aria-hidden="true"></i>
+                    <div class="ml-3">
+                        <h5 class="text-white">Escribenos al Whatsapp</h5>
+                        <a href="https://wa.me/+56953207702">+569 53207702</a>
+                        <!-- <p class="m-0">+569 53207702</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
                 <div class="d-flex justify-content-lg-center p-4" style="background: rgba(256, 256, 256, .05);">
                     <i class="fa fa-2x fa-phone-alt text-primary"></i>
                     <div class="ml-3">
-                        <h5 class="text-white">Call Us</h5>
-                        <p class="m-0">+012 345 6789</p>
+                        <h5 class="text-white">Llamanos</h5>
+                        <a href="tel:+56953207702"class="m-0">+569 53207702</a>
+                        <!-- <p class="m-0">+569 53207702</p> -->
                     </div>
                 </div>
             </div>
         </div>
         <div class="row pt-5">
-            <div class="col-lg-3 col-md-6 mb-5">
+            <div class="col-lg-6 col-md-6 mb-5">
                 <a href="index.html" class="navbar-brand">
-                    <h1 class="m-0 mt-n2 display-4 text-primary text-uppercase">Justice</h1>
+                    <h1 class="m-0 mt-n2 display-4 text-primary">JUSTICIA</h1>
                 </a>
-                <p>Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
-                <div class="d-flex justify-content-start mt-4">
+                <p style="text-align: justify;">En PorSusDerechos, nuestra pasión por la justicia es el motor que impulsa cada uno de nuestros esfuerzos. Creemos firmemente que todos merecen un trato justo y equitativo bajo la ley, y estamos comprometidos a luchar por ello en cada caso que tomamos.</p>
+                <!-- <div class="d-flex justify-content-start mt-4">
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                </div> -->
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="font-weight-semi-bold text-primary mb-4">Popular Links</h4>
+                <h4 class="font-weight-semi-bold text-primary mb-4">Links</h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Services</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Attorney</a>
-                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                    <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>Acerca de nosotros</a>
+                    <a class="text-white mb-2" href="service.html"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
+                    <a class="text-white mb-2" href="team.html"><i class="fa fa-angle-right mr-2"></i>Abogados</a>
+                    <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contacto</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="font-weight-semi-bold text-primary mb-4">Quick Links</h4>
+                <h4 class="font-weight-semi-bold text-primary mb-4"></h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>FAQs</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Help</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Terms</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Privacy</a>
-                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Site Map</a>
+                    <div class="team-img position-relative">
+                        <a href="https://www.webpay.cl/company/30719">
+                            <img class="img-fluid" src="img/webpaycl_logo.png" alt="logo webpay" href="https://www.webpay.cl/company/30719">
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="font-weight-semi-bold text-primary mb-4">Newsletter</h4>
+            <!-- <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="font-weight-semi-bold text-primary mb-4">Noticias</h4>
                 <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum.</p>
                 <div class="w-100">
                     <div class="input-group">
@@ -310,14 +355,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="row p-4 mt-5 mx-0" style="background: rgba(256, 256, 256, .05);">
             <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a class="font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved.</p>
+                <p class="m-0 text-white"><a class="font-weight-bold">IAD ©</a> | Todos los derechos reservados.</p>
             </div>
             <div class="col-md-6 text-center text-md-right">
-                <p class="m-0 text-white">Designed by <a class="font-weight-bold" href="https://htmlcodex.com">HTML Codex</a></p>
+                <p class="m-0 text-white">Designed by Ignacio Andana<a class="font-weight-bold"></a></p>
             </div>
         </div>
     </div>
@@ -337,10 +382,6 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

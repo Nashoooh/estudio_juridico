@@ -5,6 +5,25 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+/* 
+ @media screen and (max-width: 64em) {
+  .titulo-logo {
+      font-size: 2.5em;
+    }
+  }
+  
+  @media screen and (max-width: 50em) {
+  .titulo-logo {
+      font-size: 2em;
+    }
+  }
+  
+  @media screen and (max-width: 30em){
+  .titulo-logo  {
+      font-size: 1.5em;
+    }
+  } */
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -9489,9 +9508,9 @@ button.bg-dark:focus {
   text-transform: lowercase !important;
 }
 
-.text-uppercase {
+/* .text-uppercase {
   text-transform: uppercase !important;
-}
+} */
 
 .text-capitalize {
   text-transform: capitalize !important;
