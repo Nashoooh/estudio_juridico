@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - PorSusDerechos</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="fullcalendar-6.1.17/fullcalendar-6.1.17/dist/fullcalendar.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-balance-scale"></i>
+                <span class="logo-text">PorSusDerechos</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <p class="nav-section-title">MENÚ PRINCIPAL</p>
+                <ul class="nav-menu">
+                    <li class="nav-item active" data-section="dashboard">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="causas">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-gavel"></i>
+                            <span>Gestión de Causas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="clientes">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Clientes</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="calendario">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Calendario</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="documentos">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Documentos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="pagos">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Pagos y Facturación</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="personal">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Personal</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <p class="nav-section-title">CONFIGURACIÓN</p>
+                <ul class="nav-menu">
+                    <li class="nav-item" data-section="configuracion">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Configuración</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="reportes">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reportes</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-info" id="userInfo">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-details">
+                    <p class="user-name">Administrador</p>
+                    <p class="user-role">Sistema</p>
+                </div>
+            </div>
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Cerrar Sesión</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-left">
+                <button class="mobile-sidebar-toggle" id="mobileSidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 id="pageTitle">Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="header-actions">
+                    <button class="header-btn notification-btn" id="notificationBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-menu-toggle" id="userMenuToggle">
+                            <div class="user-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <span class="user-name">Administrador</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                Mi Perfil
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Configuración
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item" id="headerLogout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Cerrar Sesión
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <main class="content-area">
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="content-section active">
+                <div class="welcome-banner">
+                    <div class="welcome-content">
+                        <h2>¡Bienvenido, Administrador!</h2>
+                        <p>Gracias por unirte como administrador en nuestro sistema de gestión jurídica. Tu papel es crucial para garantizar la protección y eficiencia del estudio.</p>
+                    </div>
+                    <div class="welcome-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon cases">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>45</h3>
+                            <p>Casos Activos</p>
+                            <span class="stat-change positive">+3 esta semana</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon clients">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>128</h3>
+                            <p>Clientes</p>
+                            <span class="stat-change positive">+8 este mes</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon payments">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>$2.450.000</h3>
+                            <p>Ingresos Mensuales</p>
+                            <span class="stat-change positive">+12%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon pending">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>7</h3>
+                            <p>Plazos Pendientes</p>
+                            <span class="stat-change negative">2 urgentes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Content Grid -->
+                <div class="dashboard-grid">
+                    <!-- Próximas Audiencias -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Próximas Audiencias</h3>
+                            <button class="card-action">Ver todas</button>
+                        </div>
+                        <div class="card-content">
+                            <div class="audiencia-item urgente">
+                                <div class="audiencia-fecha">
+                                    <span class="dia">15</span>
+                                    <span class="mes">Dic</span>
+                                </div>
+                                <div class="audiencia-info">
+                                    <h4>Audiencia Preparatoria</h4>
+                                    <p>Caso: González vs. Empresa ABC</p>
+                                    <span class="audiencia-hora">14:30 hrs</span>
+                                </div>
+                                <div class="audiencia-estado urgente">Urgente</div>
+                            </div>
+                            <div class="audiencia-item">
+                                <div class="audiencia-fecha">
+                                    <span class="dia">18</span>
+                                    <span class="mes">Dic</span>
+                                </div>
+                                <div class="audiencia-info">
+                                    <h4>Juicio Oral</h4>
+                                    <p>Caso: Divorcio Martínez</p>
+                                    <span class="audiencia-hora">10:00 hrs</span>
+                                </div>
+                                <div class="audiencia-estado normal">Programada</div>
+                            </div>
+                            <div class="audiencia-item">
+                                <div class="audiencia-fecha">
+                                    <span class="dia">22</span>
+                                    <span class="mes">Dic</span>
+                                </div>
+                                <div class="audiencia-info">
+                                    <h4>Conciliación</h4>
+                                    <p>Caso: Laboral Rodríguez</p>
+                                    <span class="audiencia-hora">16:00 hrs</span>
+                                </div>
+                                <div class="audiencia-estado normal">Programada</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Documentos por Presentar -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Documentos por Presentar</h3>
+                            <button class="card-action">Ver todos</button>
+                        </div>
+                        <div class="card-content">
+                            <div class="documento-item urgente">
+                                <div class="documento-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="documento-info">
+                                    <h4>Contestación Demanda</h4>
+                                    <p>Caso: Civil López</p>
+                                    <span class="documento-plazo">Vence: 16 Dic 2024</span>
+                                </div>
+                                <div class="documento-estado urgente">2 días</div>
+                            </div>
+                            <div class="documento-item advertencia">
+                                <div class="documento-icon">
+                                    <i class="fas fa-file-word"></i>
+                                </div>
+                                <div class="documento-info">
+                                    <h4>Escrito Alegatos</h4>
+                                    <p>Caso: Penal Sánchez</p>
+                                    <span class="documento-plazo">Vence: 20 Dic 2024</span>
+                                </div>
+                                <div class="documento-estado advertencia">6 días</div>
+                            </div>
+                            <div class="documento-item">
+                                <div class="documento-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="documento-info">
+                                    <h4>Apelación</h4>
+                                    <p>Caso: Laboral García</p>
+                                    <span class="documento-plazo">Vence: 28 Dic 2024</span>
+                                </div>
+                                <div class="documento-estado normal">12 días</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clientes Morosos -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Clientes Morosos</h3>
+                            <button class="card-action">Gestionar</button>
+                        </div>
+                        <div class="card-content">
+                            <div class="moroso-summary">
+                                <div class="moroso-total">
+                                    <h4>$850.000</h4>
+                                    <p>Total Adeudado</p>
+                                </div>
+                                <div class="moroso-count">
+                                    <h4>12</h4>
+                                    <p>Clientes Morosos</p>
+                                </div>
+                            </div>
+                            <div class="moroso-list">
+                                <div class="moroso-item">
+                                    <div class="cliente-info">
+                                        <h5>María González</h5>
+                                        <p>Caso: Divorcio</p>
+                                    </div>
+                                    <div class="moroso-monto">$120.000</div>
+                                    <div class="moroso-dias">45 días</div>
+                                </div>
+                                <div class="moroso-item">
+                                    <div class="cliente-info">
+                                        <h5>Carlos Pérez</h5>
+                                        <p>Caso: Laboral</p>
+                                    </div>
+                                    <div class="moroso-monto">$95.000</div>
+                                    <div class="moroso-dias">30 días</div>
+                                </div>
+                                <div class="moroso-item">
+                                    <div class="cliente-info">
+                                        <h5>Ana Martínez</h5>
+                                        <p>Caso: Civil</p>
+                                    </div>
+                                    <div class="moroso-monto">$200.000</div>
+                                    <div class="moroso-dias">60 días</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mini Calendario -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Calendario</h3>
+                            <button class="card-action">Ver completo</button>
+                        </div>
+                        <div class="card-content">
+                            <div id="mini-calendar"></div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Calendario</h3>
+                            <button class="card-action">Ver completo</button>
+                        </div>
+                        <div class="card-content">
+                            <div class="mini-calendario">
+                                <div class="calendario-header">
+                                    <button class="nav-btn prev">‹</button>
+                                    <h4>Diciembre 2024</h4>
+                                    <button class="nav-btn next">›</button>
+                                </div>
+                                <div class="calendario-grid">
+                                    <div class="dia-semana">L</div>
+                                    <div class="dia-semana">M</div>
+                                    <div class="dia-semana">M</div>
+                                    <div class="dia-semana">J</div>
+                                    <div class="dia-semana">V</div>
+                                    <div class="dia-semana">S</div>
+                                    <div class="dia-semana">D</div>
+                                    
+                                    <div class="dia"></div>
+                                    <div class="dia"></div>
+                                    <div class="dia"></div>
+                                    <div class="dia"></div>
+                                    <div class="dia"></div>
+                                    <div class="dia"></div>
+                                    <div class="dia">1</div>
+                                    
+                                    <div class="dia">2</div>
+                                    <div class="dia">3</div>
+                                    <div class="dia">4</div>
+                                    <div class="dia">5</div>
+                                    <div class="dia">6</div>
+                                    <div class="dia">7</div>
+                                    <div class="dia">8</div>
+                                    
+                                    <div class="dia">9</div>
+                                    <div class="dia">10</div>
+                                    <div class="dia">11</div>
+                                    <div class="dia">12</div>
+                                    <div class="dia">13</div>
+                                    <div class="dia today">14</div>
+                                    <div class="dia event">15</div>
+                                    
+                                    <div class="dia">16</div>
+                                    <div class="dia">17</div>
+                                    <div class="dia event">18</div>
+                                    <div class="dia">19</div>
+                                    <div class="dia">20</div>
+                                    <div class="dia">21</div>
+                                    <div class="dia event">22</div>
+                                    
+                                    <div class="dia">23</div>
+                                    <div class="dia">24</div>
+                                    <div class="dia">25</div>
+                                    <div class="dia">26</div>
+                                    <div class="dia">27</div>
+                                    <div class="dia">28</div>
+                                    <div class="dia">29</div>
+                                    
+                                    <div class="dia">30</div>
+                                    <div class="dia">31</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+                </div>
+            </section>
+
+            <!-- Otras secciones (placeholder) -->
+            <section id="causas-section" class="content-section">
+                <h2>Gestión de Causas</h2>
+                <p>Sección en desarrollo...</p>
+            </section>
+
+            <section id="clientes-section" class="content-section">
+                <h2>Gestión de Clientes</h2>
+                <p>Sección en desarrollo...</p>
+            </section>
+
+            <section id="calendario-section" class="content-section">
+                <h2>Calendario Completo</h2>
+                <p>Sección en desarrollo...</p>
+            </section>
+
+            <section id="documentos-section" class="content-section">
+                <h2>Gestión de Documentos</h2>
+                <p>Sección en desarrollo...</p>
+            </section>
+
+            <section id="pagos-section" class="content-section">
+                <h2>Pagos y Facturación</h2>
+                <p>Sección en desarrollo...</p>
+            </section>
+
+            <section id="personal-section" class="content-section">
+                <h2>Gestión de Personal</h2>
+                <p>Sección en desarrollo...</p>
+            </section>
+
+            <section id="configuracion-section" class="content-section">
+                <h2>Configuración del Sistema</h2>
+                <p>Sección en desarrollo...</p>
+            </section>
+
+            <section id="reportes-section" class="content-section">
+                <h2>Reportes y Estadísticas</h2>
+                <p>Sección en desarrollo...</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Overlay para móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="js/admin.js"></script>
+    <script src="fullcalendar-6.1.17/fullcalendar-6.1.17/dist/fullcalendar.min.js"></script>
+
+</body>
+</html>
