@@ -738,8 +738,12 @@ function initializeMiniCalendar() {
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
       locale: 'es',
-      height: 300, // Adjust as needed
-      headerToolbar: false, // Hide default header for a "mini" look
+      height: 'auto', // Adjust as needed
+      headerToolbar: {
+            left: 'prev,next',
+            center: 'title',
+            right: ''
+      },
       events: [
         // Example events
         { title: 'Audiencia', start: '2024-12-15', color: '#bfa46d' },
@@ -750,3 +754,7 @@ function initializeMiniCalendar() {
     });
     calendar.render();
   }
+
+document.addEventListener('DOMContentLoaded', function() {
+    initializeMiniCalendar();
+});
