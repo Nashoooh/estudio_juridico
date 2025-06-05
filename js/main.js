@@ -145,3 +145,16 @@
 
 })(jQuery);
 
+
+$(document).on('click', 'a[href^="service.html#"]', function(event) {
+    var hash = this.hash || this.href.split('#')[1];
+    var target = $(hash.startsWith('#') ? hash : '#' + hash);
+    if (target.length) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: target.offset().top - 100
+        }, 800);
+    }
+});
+
+

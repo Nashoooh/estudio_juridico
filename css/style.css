@@ -9929,3 +9929,7 @@ h4, h5, h6 {
   padding: 0;
   list-style-type: none;
 }
+
+.testimonial-item .d-flex > img {
+  margin-right: 12px;
+}
