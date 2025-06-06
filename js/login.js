@@ -9,9 +9,9 @@ const spinner = document.getElementById('spinner');
 
 // Credenciales de ejemplo (en un ambiente real, esto vendría del servidor)
 const validCredentials = {
-    'admin@porsusderechos.cl': 'admin123',
-    'abogado@porsusderechos.cl': 'abogado123',
-    'secretaria@porsusderechos.cl': 'secretaria123'
+    'admin@porsusderechos.cl': { password: 'admin123', role: 'Administrador' },
+    'abogado@porsusderechos.cl': { password: 'abogado123', role: 'Abogado' },
+    'secretaria@porsusderechos.cl': { password: 'secretaria123', role: 'Secretaria' }
 };
 
 // Inicialización

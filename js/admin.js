@@ -252,6 +252,25 @@ function setupEventListeners() {
     
     // Responsive handling
     window.addEventListener('resize', handleResize);
+
+    window.addEventListener('DOMContentLoaded', function() {
+        const userSession = sessionStorage.getItem('userSession');
+        if (userSession) {
+            const { email, role } = JSON.parse(userSession);
+            document.querySelector('.user-name').textContent = email;
+            document.querySelector('.user-role').textContent = role;
+        }
+    });
+
+    window.addEventListener('DOMContentLoaded', function() {
+        const userSession = sessionStorage.getItem('userSession');
+        if (userSession) {
+            const { email } = JSON.parse(userSession);
+            document.querySelectorAll('.user-name').forEach(el => {
+                el.textContent = email;
+            });
+        }
+    });
 }
 
 // Toggle sidebar
@@ -326,6 +345,7 @@ function showSection(sectionName) {
 // Update page title
 function updatePageTitle(section) {
     const titles = {
+        'perfil': 'Perfil de Usuario',
         'dashboard': 'Dashboard',
         'causas': 'Gestión de Causas',
         'clientes': 'Gestión de Clientes',
@@ -738,23 +758,34 @@ function initializeMiniCalendar() {
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
       locale: 'es',
-      height: 'auto', // Adjust as needed
+      firstDay: 1, // Semana comienza en lunes
+      height: 'auto',
       headerToolbar: {
             left: 'prev,next',
             center: 'title',
             right: ''
       },
       events: [
-        // Example events
-        { title: 'Audiencia', start: '2024-12-15', color: '#bfa46d' },
-        { title: 'Documento', start: '2024-12-18', color: '#bfa46d' }
+        { title: 'Examen', start: '2025-06-09', color: '#bfa46d' },
+        { title: 'Audiencia', start: '2025-06-15', color: '#bfa46d' },
+        { title: 'Documento', start: '2025-06-18', color: '#bfa46d' }
       ],
       dayMaxEventRows: 2,
       fixedWeekCount: false
     });
     calendar.render();
-  }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeMiniCalendar();
 });
+
+// const navLinks = document.querySelectorAll('[data-section]');
+// navLinks.forEach(link => {
+//     link.addEventListener('click', function(e) {
+//         e.preventDefault();
+//         const sectionId = this.getAttribute('data-section');
+//         document.querySelectorAll('.content-section').forEach(sec => sec.style.display = 'none');
+//         document.getElementById(sectionId).style.display = 'block';
+//     });
+// });
